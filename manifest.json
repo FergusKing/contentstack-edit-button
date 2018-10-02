@@ -1,0 +1,38 @@
+{
+  "name": "Edit button - Contentstack",
+  "version": "0.3",
+  "description": "Add a edit button to your front end and auto re-load the page when you publish - using the Headless CMS Contentstack",
+  "permissions": ["activeTab", "declarativeContent", "storage", "tabs"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "images/logo16.png",
+      "32": "images/logo32.png",
+      "48": "images/logo48.png",
+      "128": "images/logo128.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "icons": {
+    "16": "images/logo16.png",
+    "32": "images/logo32.png",
+    "48": "images/logo48.png",
+    "128": "images/logo128.png"
+  },
+  "manifest_version": 2
+}
